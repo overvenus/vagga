@@ -815,6 +815,7 @@ fn apt_get_install<T: AsRef<OsStr>>(ctx: &mut Context,
 }
 
 impl BuildStep for Ubuntu {
+    fn name(&self) -> &'static str { "Ubuntu" }
     fn hash(&self, _cfg: &Config, hash: &mut Digest)
         -> Result<(), VersionError>
     {
@@ -843,6 +844,7 @@ impl BuildStep for Ubuntu {
 }
 
 impl BuildStep for UbuntuUniverse {
+    fn name(&self) -> &'static str { "UbuntuUniverse" }
     fn hash(&self, _cfg: &Config, _hash: &mut Digest)
         -> Result<(), VersionError>
     {
@@ -867,6 +869,7 @@ impl BuildStep for UbuntuUniverse {
 }
 
 impl BuildStep for UbuntuPPA {
+    fn name(&self) -> &'static str { "UbuntuPPA" }
     fn hash(&self, _cfg: &Config, hash: &mut Digest)
         -> Result<(), VersionError>
     {
@@ -890,6 +893,7 @@ impl BuildStep for UbuntuPPA {
 }
 
 impl BuildStep for AptTrust {
+    fn name(&self) -> &'static str { "AptTrust" }
     fn hash(&self, _cfg: &Config, hash: &mut Digest)
         -> Result<(), VersionError>
     {
@@ -914,6 +918,7 @@ impl BuildStep for AptTrust {
 }
 
 impl BuildStep for UbuntuRepo {
+    fn name(&self) -> &'static str { "UbuntuRepo" }
     fn hash(&self, _cfg: &Config, hash: &mut Digest)
         -> Result<(), VersionError>
     {
@@ -949,6 +954,7 @@ impl BuildStep for UbuntuRepo {
 }
 
 impl BuildStep for UbuntuRelease {
+    fn name(&self) -> &'static str { "UbuntuRelease" }
     fn hash(&self, _cfg: &Config, hash: &mut Digest)
         -> Result<(), VersionError>
     {
