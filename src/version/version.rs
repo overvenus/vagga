@@ -1,5 +1,4 @@
 use std::env;
-use std::os::unix::ffi::OsStrExt;
 
 use config::{Config, Container};
 use super::error::Error;

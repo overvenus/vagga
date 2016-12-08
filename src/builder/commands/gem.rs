@@ -1,7 +1,6 @@
 use std::path::{Path, PathBuf};
 use std::fs::File;
 use std::io::{Read, Write, BufReader, BufRead};
-use std::os::unix::ffi::OsStrExt;
 
 use regex::Regex;
 use quire::validate as V;

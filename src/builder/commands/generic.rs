@@ -1,7 +1,6 @@
 use std::env;
 use std::path::{Path, PathBuf};
 use std::collections::BTreeMap;
-use std::os::unix::ffi::OsStrExt;
 
 use unshare::{Command, Namespace};
 use quire::validate as V;

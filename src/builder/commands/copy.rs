@@ -2,7 +2,6 @@ use std::io::{self, ErrorKind};
 use std::fs::{File, Metadata, read_link};
 use std::path::{Path, PathBuf};
 use std::os::unix::fs::{PermissionsExt, MetadataExt};
-use std::os::unix::ffi::OsStrExt;
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 
 use libc::{uid_t, gid_t};

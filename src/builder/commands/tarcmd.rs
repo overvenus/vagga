@@ -2,7 +2,6 @@ use std::io::{self, Read, Seek, SeekFrom};
 use std::fs::{File, Permissions};
 use std::fs::{create_dir_all, set_permissions, hard_link};
 use std::os::unix::fs::{PermissionsExt, symlink};
-use std::os::unix::ffi::OsStrExt;
 use std::path::{Path, PathBuf};
 
 use tar::Archive;

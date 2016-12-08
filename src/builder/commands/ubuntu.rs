@@ -19,7 +19,6 @@ use builder::dns::revert_name_files;
 use file_util::{Dir, copy, copy_utime};
 use build_step::{BuildStep, VersionError, StepError, Digest, Config, Guard};
 use container::util::clean_dir;
-use digest::hex;
 
 const DEFAULT_MIRROR: &'static str = "mirror://mirrors.ubuntu.com/mirrors.txt";
 
@@ -844,7 +843,7 @@ impl BuildStep for Ubuntu {
 }
 
 impl BuildStep for UbuntuUniverse {
-    fn hash(&self, _cfg: &Config, hash: &mut Digest)
+    fn hash(&self, _cfg: &Config, _hash: &mut Digest)
         -> Result<(), VersionError>
     {
         // Nothing to do: singleton command

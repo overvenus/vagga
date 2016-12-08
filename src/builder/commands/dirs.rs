@@ -1,6 +1,5 @@
 use std::io;
 use std::fs::remove_file;
-use std::os::unix::ffi::OsStrExt;
 use std::collections::BTreeMap;
 
 use quire::validate as V;

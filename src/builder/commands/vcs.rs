@@ -1,7 +1,6 @@
 use std::fs::rename;
 use std::fs::create_dir_all;
 use std::path::{Path, PathBuf};
-use std::os::unix::ffi::OsStrExt;
 
 use unshare::{Command, Stdio};
 
