@@ -90,8 +90,8 @@ impl BuildStep for Unzip {
         } else {
             hash.field("url", &self.url);
         }
-        hash.field("path", self.path.as_os_str().as_bytes());
-        hash.field("subdir", self.subdir.as_os_str().as_bytes());
+        hash.field("path", &self.path);
+        hash.field("subdir", &self.subdir);
         Ok(())
     }
     fn build(&self, guard: &mut Guard, build: bool)

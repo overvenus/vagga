@@ -26,7 +26,8 @@ impl BuildStep for Text {
         -> Result<(), VersionError>
     {
         for (k, v) in &self.0 {
-            hash.field(k.as_os_str().as_bytes(), v);
+            hash.field("path", k);
+            hash.field("data", v);
         }
         Ok(())
     }

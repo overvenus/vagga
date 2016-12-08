@@ -303,8 +303,8 @@ impl BuildStep for Tar {
         } else {
             hash.field("url", &self.url);
         }
-        hash.field("path", self.path.as_os_str().as_bytes());
-        hash.field("subdir", self.subdir.as_os_str().as_bytes());
+        hash.field("path", &self.path);
+        hash.field("subdir", &self.subdir);
         Ok(())
     }
     fn build(&self, guard: &mut Guard, build: bool)
@@ -329,8 +329,7 @@ impl BuildStep for TarInstall {
         } else {
             hash.field("url", &self.url);
         }
-        hash.opt_field("subdir",
-            &self.subdir.as_ref().map(|x| x.as_os_str().as_bytes()));
+        hash.opt_field("subdir", &self.subdir);
         hash.field("script", &self.script);
         Ok(())
     }

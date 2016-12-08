@@ -155,7 +155,7 @@ impl BuildStep for Git {
         hash.field("url", &self.url);
         hash.opt_field("revision", &self.revision);
         hash.opt_field("branch", &self.branch);
-        hash.field("path", self.path.as_os_str().as_bytes());
+        hash.field("path", &self.path);
         Ok(())
     }
     fn build(&self, guard: &mut Guard, build: bool)
@@ -178,7 +178,7 @@ impl BuildStep for GitInstall {
         hash.field("url", &self.url);
         hash.opt_field("revision", &self.revision);
         hash.opt_field("branch", &self.branch);
-        hash.field("subdir", self.subdir.as_os_str().as_bytes());
+        hash.field("subdir", &self.subdir);
         hash.field("script", &self.script);
         Ok(())
     }

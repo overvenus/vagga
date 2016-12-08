@@ -31,8 +31,8 @@ impl BuildStep for Download {
         -> Result<(), VersionError>
     {
         hash.field("url", &self.url);
-        hash.field("path", self.path.as_os_str().as_bytes());
-        hash.text("mode", self.mode);
+        hash.field("path", &self.path);
+        hash.field("mode", self.mode);
         Ok(())
     }
     fn build(&self, guard: &mut Guard, build: bool)
