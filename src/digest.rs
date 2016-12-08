@@ -114,9 +114,9 @@ impl fmt::LowerHex for Digest {
 }
 
 fn hexfmt(data: &[u8], f: &mut fmt::Formatter) -> fmt::Result {
-    assert!(data.len() == 20);
+    assert!(data.len() == 32);
     let max_digits = f.precision().unwrap_or(data.len());
-    let mut res = [0u8; 40];
+    let mut res = [0u8; 64];
     for (i, c) in data.iter().take(max_digits).enumerate() {
         res[i*2] = LOWER_CHARS[(c >> 4) as usize];
         res[i*2+1] = LOWER_CHARS[(c & 0xF) as usize];
